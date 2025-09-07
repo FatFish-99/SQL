@@ -1,0 +1,53 @@
+/* q01 */
+boeing(dist_range, avg_range)
+
+/* q02 */
+vladimir(passenger_name, number_of_booking, number_of_booking, number_of_emails)
+
+/* q03 */
+seats_aircraft(aircraft_code, seats)
+
+/* q04 */
+airport_asia(airport_code)
+
+/* q05 */
+no_flight(model)
+
+/* q06 */
+available_airports(airports)
+
+/* q07 */
+bookings_passenger(book_ref, passengers)
+
+/* q08 */
+bookings_date((book_ref, book_date, total_amount)
+
+/* q09 */
+city_airport(city)
+
+/* q10 */
+span_date(earliest, latest)
+
+/* q11 */
+invalid_tickets(num_invalid)
+
+/* q12 */
+airbus(departure_airport, arrival_airport)
+
+/* q13 */
+fares_sales(fare_conditions,amount)
+
+/* q14 */
+booking_code(book_ref, passenger_name)
+
+/* q15 */
+tickets_sold(fare_conditions, tickets)
+
+/* q16 */
+boeing_city(model, city)
+
+/* q17 */
+elena_delayed(flight_id, scheduled_departure, d_city, departure_airport, a_city,arrival_airport)
+
+/* q18 */
+delayed_airport(departure_airport, count_flights, count_delayed)
