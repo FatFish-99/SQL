@@ -9,7 +9,19 @@ CREATE TABLE booking_code(
     
 ); 
 
+/* Phuong Ho - 2364718 */
 
-/* 
-Your code here
-*/
+INSERT INTO booking_code (book_ref, passenger_name)
+SELECT DISTINCT
+    T1.book_ref,
+    T1.passenger_name
+FROM airline.tickets AS T1
+WHERE T1.book_ref IN (
+    SELECT T2.book_ref
+    FROM airline.tickets AS T2
+    GROUP BY T2.book_ref
+    HAVING COUNT(*) >= 3
+);
+
+--verify   
+SELECT * FROM booking_code;

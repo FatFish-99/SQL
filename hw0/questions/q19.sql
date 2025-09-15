@@ -13,21 +13,21 @@ CREATE TABLE top_table(
 INSERT INTO top_table(table_name, total_rows)
 SELECT table_name, total_rows
 FROM (
-    SELECT 'airline.aircrafts' AS table_name, COUNT(*) AS total_rows FROM airline.aircrafts
+    SELECT 'aircrafts' AS table_name, COUNT(*) AS total_rows FROM airline.aircrafts
     UNION ALL
-    SELECT 'airline.airports' AS table_name, COUNT(*) AS total_rows FROM airline.airports
+    SELECT 'airports' AS table_name, COUNT(*) AS total_rows FROM airline.airports
     UNION ALL
-    SELECT 'airline.boardingpasses' AS table_name, COUNT(*) AS total_rows FROM airline.boardingpasses
+    SELECT 'boardingpasses' AS table_name, COUNT(*) AS total_rows FROM airline.boardingpasses
     UNION ALL
-    SELECT 'airline.bookings' AS table_name, COUNT(*) AS total_rows FROM airline.bookings
+    SELECT 'bookings' AS table_name, COUNT(*) AS total_rows FROM airline.bookings
     UNION ALL
-    SELECT 'airline.flights' AS table_name, COUNT(*) AS total_rows FROM airline.flights
+    SELECT 'flights' AS table_name, COUNT(*) AS total_rows FROM airline.flights
     UNION ALL
-    SELECT 'airline.flighttickets' AS table_name, COUNT(*) AS total_rows FROM airline.flighttickets
+    SELECT 'flighttickets' AS table_name, COUNT(*) AS total_rows FROM airline.flighttickets
     UNION ALL
-    SELECT 'airline.seats' AS table_name, COUNT(*) AS total_rows FROM airline.seats
+    SELECT 'seats' AS table_name, COUNT(*) AS total_rows FROM airline.seats
     UNION ALL
-    SELECT 'airline.tickets' AS table_name, COUNT(*) AS total_rows FROM airline.tickets
+    SELECT 'tickets' AS table_name, COUNT(*) AS total_rows FROM airline.tickets
 ) AS all_tables
 ORDER BY total_rows DESC;
 

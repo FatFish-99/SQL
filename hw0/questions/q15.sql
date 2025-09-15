@@ -9,7 +9,16 @@ CREATE TABLE tickets_sold(
     
 ); 
 
+/* Phuong Ho - 2364718 */
 
-/* 
-Your code here
-*/
+INSERT INTO tickets_sold (fare_conditions, tickets)
+SELECT
+    fare_conditions,
+    COUNT(*) AS tickets
+    FROM airline.flighttickets AS ft
+    JOIN airline.flights AS f ON ft.flight_id = f.flight_id
+WHERE f.status = 'Arrived'
+GROUP BY fare_conditions;
+
+--verify
+SELECT * FROM tickets_sold;

@@ -8,7 +8,17 @@ CREATE TABLE fares_sales(
     amount numeric(12,2)
 ); 
 
+/* Phuong Ho - 2364718 */
 
-/* 
-Your code here
-*/
+INSERT INTO fares_sales (fare_conditions, amount)
+SELECT
+    ft.fare_conditions,
+    SUM(ft.amount) AS amount
+FROM airline.flighttickets AS ft
+JOIN airline.flights AS f ON ft.flight_id = f.flight_id
+JOIN airline.airports AS a ON f.departure_airport = a.airport_code
+WHERE a.city = 'Moscow'
+GROUP BY ft.fare_conditions;
+
+--verify
+SELECT * FROM fares_sales;
