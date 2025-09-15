@@ -8,7 +8,14 @@ CREATE TABLE boeing(
     avg_range numeric(6,2)
 ); 
 
+/* Phuong Ho - 2364718 */
 
-/* 
-Your code here
-*/
+INSERT INTO boeing(dist_range, avg_range)
+SELECT 
+    COUNT(DISTINCT model) AS dist_range,
+    CAST(AVG(range::numeric) AS numeric(6,2)) AS avg_range
+FROM airline.aircrafts
+WHERE model LIKE 'Boeing%';
+
+--verify
+SELECT * FROM boeing;

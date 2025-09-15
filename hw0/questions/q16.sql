@@ -8,7 +8,38 @@ CREATE TABLE boeing_city(
     city character(20)
 ); 
 
+/* Phuong Ho - 2364718 */
 
-/* 
-Your code here
-*/
+INSERT INTO boeing_city (model, city)
+SELECT
+    T.model,
+    T.city
+FROM (
+    SELECT
+        a.model,
+        airports.city
+    FROM
+        airline.aircrafts AS a
+    JOIN
+        airline.flights AS f ON a.aircraft_code = f.aircraft_code
+    JOIN
+        airline.airports ON f.departure_airport = airline.airports.airport_code
+    WHERE
+        a.model LIKE '%Boeing%'
+    UNION
+    SELECT
+        a.model,
+        airports.city
+    FROM
+        airline.aircrafts AS a
+    JOIN
+        airline.flights AS f ON a.aircraft_code = f.aircraft_code
+    JOIN
+        airline.airports ON f.arrival_airport = airline.airports.airport_code
+    WHERE
+        a.model LIKE '%Boeing%'
+) AS T
+GROUP BY T.model, T.city;
+
+--verify
+SELECT * FROM boeing_city;

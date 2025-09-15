@@ -7,7 +7,12 @@ CREATE TABLE airport_asia(
     airport_code character(3)
 ); 
 
+/* Phuong Ho - 2364718 */
+INSERT INTO airport_asia(airport_code)
+SELECT
+    airport_code
+FROM airline.airports
+WHERE timezone LIKE 'Asia%';
 
-/* 
-Your code here
-*/
+--verify
+SELECT * FROM airport_asia;

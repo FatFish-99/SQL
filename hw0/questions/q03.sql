@@ -8,7 +8,14 @@ CREATE TABLE seats_aircraft(
     seats int
 ); 
 
+/* Phuong Ho - 2364718 */
+INSERT INTO seats_aircraft(aircraft_code, seats)
+SELECT
+    aircraft_code,
+    COUNT(*) AS seats
+FROM airline.seats
+GROUP BY aircraft_code
+ORDER BY aircraft_code;
 
-/* 
-Your code here
-*/
+--verify
+SELECT * FROM seats_aircraft;
