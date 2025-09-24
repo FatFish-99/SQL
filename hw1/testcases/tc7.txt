@@ -1,0 +1,4 @@
+Table1(id1(pk),id2(fk:Table2.id2),col1,col2)
+Table2(id2(pk),id3(fk:Table3.id3),col3)
+Table3(id3(pk),col4)
+Table4(id4(pk),id3(fk:Table3.id3),col5)

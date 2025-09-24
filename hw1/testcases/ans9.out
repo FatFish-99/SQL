@@ -1,0 +1,7 @@
+    referential integrity normalized
+T1                Y           Y
+T2                N           Y
+T3                Y           N
+T4                N           N
+DB referential integrity: N
+DB normalized: N

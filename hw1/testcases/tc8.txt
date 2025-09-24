@@ -1,0 +1,4 @@
+T1(id1(pk),deptid,zip)
+T2(id2(pk),id1(fk:T1.id1),grade)
+T3(id3(pk),std)
+T4(id4(pk),id2(fk:T2.id2),id3(fk:T3.id3),freq)
